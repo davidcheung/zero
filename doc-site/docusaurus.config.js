@@ -2,7 +2,7 @@
 module.exports = {
   title: 'Zero',
   tagline: 'Zero sets up everything you need so you can immediately start building your product',
-  url: 'https://docs.zero-david.online',
+  url: 'https://docs.getzero.dev',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
