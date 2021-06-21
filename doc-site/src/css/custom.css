@@ -15,6 +15,8 @@
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-navbar-link-hover-color: rgb(33, 175, 144);
   --ifm-code-font-size: 95%;
+  --ifm-footer-padding-vertical: 20px;
+  --ifm-footer-padding-horizontal: 10px;
 }
 
 html[data-theme='dark'] {
@@ -33,6 +35,23 @@ html[data-theme='light'] {
   --ifm-font-color-base-inverse: navy;
 }
 
+.header-logo-32:before{
+  content: "";
+  display: flex;
+  height: 24px;
+  width: 24px;
+}
+
+html[data-theme='dark'] .header-github-link:before {
+  background: url(../../static/img/github-32px-light.png) no-repeat;
+  background-size: cover;
+}
+
+html[data-theme='light'] .header-github-link:before  {
+  background: url(../../static/img/github-32px.png) no-repeat;
+  background-size: cover;
+}
+
 html{
   background: var(--ifm-background-color);
 }
@@ -49,4 +68,8 @@ html{
 
 .menu__link--sublist{
   text-transform: capitalize;
+}
+
+.navbar__brand {
+  margin-right: 0;
 }

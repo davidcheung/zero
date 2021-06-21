@@ -2,7 +2,7 @@
 module.exports = {
   title: 'Zero',
   tagline: 'Zero sets up everything you need so you can immediately start building your product',
-  url: 'https://docs.getzero.dev',
+  url: 'https://docs.zero-david.online',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -21,12 +21,12 @@ module.exports = {
       items: [
         {
           to: '/docs/zero/about/overview',
-          label: 'Documentation',
+          label: 'Docs',
           position: 'right'
         },
         {
           href: 'https://github.com/commitdev/zero',
-          label: 'GitHub',
+          className: 'header-github-link header-logo-32',
           position: 'right',
         },
       ],
@@ -35,53 +35,15 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Zero',
-          items: [
-            {
-              label: 'Zero CLI',
-              to: 'https://github.com/commitdev/zero',
-            },
-            {
-              label: 'AWS EKS stack',
-              to: 'https://github.com/commitdev/zero-aws-eks-stack',
-            },
-            {
-              label: 'Frontend - React',
-              to: 'https://github.com/commitdev/zero-deployable-react-frontend',
-            },
-            {
-              label: 'Backend - golang',
-              to: 'https://github.com/commitdev/zero-deployable-backend',
-            },
-            {
-              label: 'Backend - Node.js',
-              to: 'https://github.com/commitdev/zero-deployable-node-backend',
-            },
-          ],
-        },
-        {
-          title: 'Community',
+          title: 'Links',
           items: [
             {
               label: 'Slack',
-              href: 'https://commitzero.slack.com'
+              href: 'https://slack.getzero.dev'
             },
-            {
-              label: 'Linkedin',
-              href: 'https://www.linkedin.com/company/commitdev/',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
             {
               label: 'Blog',
-              href: 'https://blog.commit.dev',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/commitdev/zero',
+              href: 'https://commit.dev/blog',
             },
           ],
         },
@@ -98,6 +60,8 @@ module.exports = {
           path: 'docs',
           routeBasePath: 'docs/zero/',
           include: ['**/*.md'],
+          // editUrl: 'https://github.com/commitdev/zero/blob/main/doc-site/',
+          editUrl: 'https://github.com/commitdev/zero/blob/doc-site/doc-site/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

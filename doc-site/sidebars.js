@@ -1,3 +1,5 @@
+const config = require('./docusaurus.config');
+
 module.exports = {
   zero: [{
       "About": [{
@@ -26,17 +28,17 @@ module.exports = {
       {
         type: 'link',
         label: 'AWS EKS Stack',
-        href: '/docs/modules/aws-eks-stack',
+        href: `${config.url}/docs/modules/aws-eks-stack`,
       },
       {
         type: 'link',
         label: 'Frontend',
-        href: '/docs/modules/frontend',
+        href: `${config.url}/docs/modules/frontend-react`,
       },
       {
         type: 'link',
         label: 'Backend',
-        href: '/docs/modules/backend',
+        href: `${config.url}/docs/modules/backend-go`,
       }
     ]
   }]
