@@ -17,6 +17,7 @@
   --ifm-code-font-size: 95%;
   --ifm-footer-padding-vertical: 20px;
   --ifm-footer-padding-horizontal: 10px;
+  --ifm-footer-background-color: transparent;
 }
 
 html[data-theme='dark'] {
