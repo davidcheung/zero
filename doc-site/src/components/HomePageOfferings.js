@@ -9,7 +9,7 @@ const offerings = [
       {
         name: 'Terraform',
         logo: 'img/tools/terraform.png',
-        url: 'https://terraform.io'
+        url: 'https://terraform.io',
       },
       {
         name: 'Kubernetes',
@@ -20,32 +20,32 @@ const offerings = [
       {
         name: 'Amazon Web Services',
         logo: 'img/tools/aws.png',
-        url: 'https://aws.amazon.com/'
+        url: 'https://aws.amazon.com/',
       },
       {
         name: 'Cert Manager',
         logo: 'img/tools/cert-manager.png',
-        url: 'https://cert-manager.io/docs/'
+        url: 'https://cert-manager.io/docs/',
       },
       {
         name: 'External DNS',
         logo: 'img/tools/external-dns.png',
-        url: 'https://github.com/kubernetes-sigs/external-dns'
+        url: 'https://github.com/kubernetes-sigs/external-dns',
       },
       {
         name: 'Wireguard',
         logo: 'img/tools/wireguard.png',
-        url: 'https://www.wireguard.com/'
+        url: 'https://www.wireguard.com/',
       },
       {
         name: 'Prometheus',
         logo: 'img/tools/prometheus.png',
-        url: 'https://prometheus.io/'
+        url: 'https://prometheus.io/',
       },
       {
         name: 'Grafana',
         logo: 'img/tools/grafana.png',
-        url: 'https://grafana.com/'
+        url: 'https://grafana.com/',
       },
     ]
   },
@@ -57,22 +57,22 @@ const offerings = [
         name: 'Github Actions',
         logo: 'img/tools/github-actions.svg',
         noCrop: true,
-        url: 'https://google.ca'
+        url: 'https://google.ca',
       },
       {
         name: 'CircleCI',
         logo: 'img/tools/circleci.png',
-        url: 'https://circleci.com'
+        url: 'https://circleci.com',
       },
       {
         name: 'Docker',
         logo: 'img/tools/docker.png',
-        url: 'https://docker.com/'
+        url: 'https://docker.com/',
       },
       {
         name: 'AWS ECR',
         logo: 'img/tools/ecr.png',
-        url: 'https://aws.amazon.com/ecr/'
+        url: 'https://aws.amazon.com/ecr/',
       },
     ]
   },
@@ -83,22 +83,22 @@ const offerings = [
       {
         name: 'React js',
         logo: 'img/tools/react.png',
-        url: 'https://reactjs.org'
+        url: 'https://reactjs.org',
       },
       {
         name: 'AWS S3',
         logo: 'img/tools/s3.png',
-        url: 'https://aws.amazon.com/s3/'
+        url: 'https://aws.amazon.com/s3/',
       },
       {
         name: 'AWS Cloudfront',
         logo: 'img/tools/cloudfront.png',
-        url: 'https://aws.amazon.com/cloudfront/'
+        url: 'https://aws.amazon.com/cloudfront/',
       },
       {
         name: 'ECMAScript 2018',
         logo: 'img/tools/js.png',
-        url: 'https://www.w3schools.com/js/js_2018.asp'
+        url: 'https://www.w3schools.com/js/js_2018.asp',
       },
     ]
   },
@@ -109,23 +109,23 @@ const offerings = [
       {
         name: 'Golang',
         logo: 'img/tools/golang.png',
-        url: 'https://golang.org'
+        url: 'https://golang.org',
       },
       {
         name: 'Node.js',
         logo: 'img/tools/nodejs.png',
         url: 'https://nodejs.org',
-        noCrop: true
+        noCrop: true,
       },
       {
         name: 'Open ID Connect',
         logo: 'img/tools/openid.png',
-        url: 'https://openid.net/connect/'
+        url: 'https://openid.net/connect/',
       },
       {
         name: 'Ory Kratos & Oathkeeper',
         logo: 'img/tools/ory.png',
-        url: 'https://www.ory.sh/kratos/docs/'
+        url: 'https://www.ory.sh/kratos/docs/',
       },
       {
         name: 'Telepresence',

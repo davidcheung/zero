@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './HomepageWhyZero.module.scss';
 
-
 const reasons = [
   {
     logo: require('../../static/img/icons/reason-technical-founder.svg').default,
@@ -24,18 +23,20 @@ const reasons = [
     have included. The system you get starts small but allows you to scale well into the 
     future when you need to.`,
   }
-]
-function Reasons ({data}) {
+];
 
-  return <div className={`${styles.reasons}`}>
-    {data.map(i => <>
-      <div className={styles.reason}>
-        <i.logo className={styles.reason_logo} alt="logo" />
-        <p className={`${styles.description} description`}>{i.text}</p>
-      </div>
-    </>)}
+const Reasons = ({data}) => (
+  <div className={`${styles.reasons}`}>
+    {
+      data.map((i, idx) => (
+        <div key={idx} className={styles.reason}>
+          <i.logo className={styles.reason_logo} alt="logo" />
+          <p className={`${styles.description} description`}>{i.text}</p>
+        </div>
+      ))
+    }
   </div>
-}
+)
 
 export default function FeatureWhyZero () {
 const title = "Why is Zero good for startups ?"
