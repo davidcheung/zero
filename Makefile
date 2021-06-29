@@ -1,4 +1,4 @@
-VERSION = 0.0.1
+VERSION = 0.1.1
 BUILD ?=$(shell git rev-parse --short HEAD)
 PKG ?=github.com/commitdev/zero
 BUILD_ARGS=-v -trimpath -ldflags=all="-X ${PKG}/version.AppVersion=${VERSION} -X ${PKG}/version.AppBuild=${BUILD}"
@@ -34,3 +34,11 @@ ci-docker-build:
 ci-docker-push:
 	echo "${DOCKERHUB_PASS}" | docker login -u commitdev --password-stdin
 	docker push commitdev/zero:${VERSION_TAG}
+
+doc-site-build:
+	cd doc-site && \
+	npm run build
+
+doc-site-deploy:
+	cd doc-site && \
+	aws s3 sync build s3://docs.zero-david.online/ --exclude "docs/modules/*" --delete

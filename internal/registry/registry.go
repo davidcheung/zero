@@ -19,6 +19,12 @@ func GetRegistry(path string) Registry {
 			},
 		},
 		{
+			"cheung",
+			[]string{
+				"/Users/davidcheung/projects/zero-aws-eks-stack",
+			},
+		},
+		{
 			"EKS + NodeJS + React + Gatsby",
 			[]string{
 				path + "/zero-aws-eks-stack",

@@ -2,7 +2,7 @@
 module.exports = {
   title: 'Zero',
   tagline: 'Opinionated infrastructure to take you from idea to production on day one',
-  url: 'https://staging.getzero.dev',
+  url: process.env.BUILD_DOMAIN ? `https://${process.env.BUILD_DOMAIN}` : 'https://staging.getzero.dev',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -90,8 +90,6 @@ module.exports = {
     'docusaurus-plugin-sass'
   ],
   stylesheets: [
-      // "https://fonts.googleapis.com/css?family=Lato:400,900",
-      "https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Montserrat:wght@400;600;700;800&display=swap",
-      
+    "https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Montserrat:wght@400;600;700;800&display=swap",
   ]
 };
