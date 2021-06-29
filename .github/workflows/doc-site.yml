@@ -15,6 +15,7 @@ env:
   region: us-west-2
   s3_sync_path_to_exclude: docs/modules/*
   s3_sync_path: /
+  BUILD_DOMAIN: staging.getzero.dev
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -61,9 +62,9 @@ jobs:
       shell: bash
       run: |
         cd build
-        aws s3 sync . ${{ secrets.DOC_SITE_DOMAIN }}${{ env.s3_sync_path }} --exclude "${{ env.s3_sync_path_to_exclude }}" --delete
+        aws s3 sync . ${{ secrets.DOC_SITE_BUCKET_NAME }}${{ env.s3_sync_path }} --exclude "${{ env.s3_sync_path_to_exclude }}" --delete
     - name: Invalidate Cloudfront
       shell: bash
       run: |
-        export DIST_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?Aliases.Items[?@=='${{ secrets.DOC_SITE_DOMAIN }}']].Id | [0]" | tr -d '"')
+        export DIST_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?Aliases.Items[?@=='${{ secrets.DOC_SITE_BUCKET_NAME }}']].Id | [0]" | tr -d '"')
         aws cloudfront create-invalidation --distribution-id ${DIST_ID} --paths "/*"
