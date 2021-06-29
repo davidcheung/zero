@@ -8,6 +8,8 @@ on:
 
 env:
   region: us-west-2
+  s3_sync_path_to_exclude: docs/modules/*
+  s3_sync_path: /
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -54,7 +56,7 @@ jobs:
       shell: bash
       run: |
         cd build
-        aws s3 sync . ${{ secrets.S3_bucket_prefix }} --exclude "docs/modules/*" --delete
+        aws s3 sync . ${{ secrets.S3_bucket_prefix }}${{ env.s3_sync_path }} --exclude "${{ env.s3_sync_path_to_exclude }}" --delete
     - name: Invalidate Cloudfront
       shell: bash
       run: |

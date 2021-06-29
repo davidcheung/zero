@@ -143,54 +143,61 @@ const offerings = [
   },
 ]
 
-function Offerings ({data, active, clickHandler}) {
-  return <>
-    <div className={styles.offering_box}>
-      <div className={styles.left_box}>
-        {
-          data.map((i, idx) => <>
-            <Discipline key={idx} logo={i.logo} label={i.label} clickHandler={clickHandler} active={i.label == active}  />
-          </>)}
-      </div>
-      <div className={styles.right_box}>
-        {
-          data.map((i, idx) => {
-            return i.label == active ? <ToolBox key={idx} data={i.tools} active={true} /> : null
-          })}
-      </div>
+const Offerings = ({data, active, clickHandler}) => (
+  <div className={styles.offering_box}>
+    <div className={styles.left_box}>
+      {
+        data.map((i, idx) =>
+          <Discipline
+            key={idx}
+            logo={i.logo}
+            label={i.label}
+            clickHandler={clickHandler}
+            active={i.label == active}
+          />
+        )
+      }
     </div>
-  </>
-}
 
-
-function Discipline({logo: LogoSvg, label, clickHandler, active}) {
-  return (
-    <div
-      className={`${styles.discipline} ${active && styles.discipline_active}`} 
-      onClick={() => clickHandler({ active: label})}>
-      <LogoSvg className={styles.logo} alt="logo" />
-      <h3 className={styles.discipline_name}>{label}</h3>
+    <div className={styles.right_box}>
+      <ToolBox
+        data={ data.find((i) => i.label == active).tools }
+      />
     </div>
-  )
-}
-function ToolBox ({data}) {
-  return <ul>
-    {data.map((tool, idx) => <>
-      <li key={idx}>
-        <a href={tool.url} target="_blank">
-          <img src={tool.logo} className={tool.noCrop && styles["no-crop"]} />
-          <p>{tool.name}</p>
-        </a>
-      </li>
-    </>)}
-  </ul>
-}
+  </div>
+)
 
-export default function FeaturedOfferings () {
+const Discipline = ({logo: LogoSvg, label, clickHandler, active}) => (
+  <div
+    className={`${styles.discipline} ${active && styles.discipline_active}`}
+    onClick={() => clickHandler({ active: label})}
+  >
+    <LogoSvg className={styles.logo} alt="logo" />
+    <h3 className={styles.discipline_name}>{label}</h3>
+  </div>
+)
+
+const ToolBox = ({data}) => <ul>
+  {
+    data.map((tool, idx) =>
+      <Tool key={idx} tool={tool} idx={idx} />
+    )
+  }
+</ul>
+
+const Tool = ({tool, idx}) => (<li key={`tool-${idx}`}>
+  <a href={tool.url} target="_blank">
+    <img src={tool.logo} className={tool.noCrop && styles["no-crop"]} />
+    <p>{tool.name}</p>
+  </a>
+</li>)
+
+export default function FeaturedOfferings() {
+  const title = "What do you get out of the box ?"
   const [state, setState] = useState({
     active: "Infrastructure",
   })
-  const title = "What do you get out of the box ?"
+
   return <div className={`${styles.offerings_container} featured-sections`}>
     <h3>{title}</h3>
     <Offerings data={offerings} active={state.active} clickHandler={setState} />
