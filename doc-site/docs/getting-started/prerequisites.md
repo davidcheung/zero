@@ -7,7 +7,7 @@ sidebar_position: 2
 ### `zero check`
 In order to use Zero, run the `zero check` command on your system to find out which other tools / dependencies you might need to install.
 
-<img src="/img/zero-check.png" width="400" />
+<img src="/img/docs/zero-check.png" width="400" />
 
 [AWS CLI], [Kubectl], [Terraform], [jq], [Git], [Wget]
 

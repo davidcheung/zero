@@ -18,3 +18,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# to test theme color for elements locally
+docs/about/color-test.md*

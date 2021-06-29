@@ -1,35 +1,55 @@
 import React from 'react';
 import clsx from 'clsx';
-import styles from './HomepageFeatures.module.css';
+import styles from './HomepageFeatures.module.scss';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Reliable',
+    Svg: require('../../static/img/icons/attr-reliable.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Your infrastructure will be set up in multiple availability zones
+        making it highly available and fault tolerant. All infrastructure is
+        represented with code using HashiCorp Terraform so your
+        environments are reproducible, auditable, and easy to configure.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Scalable',
+    Svg: require('../../static/img/icons/attr-scalable.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Your services will be running in Kubernetes, with the EKS nodes 
+        running in AWS Auto Scaling Group. The application workloads 
+        and cluster size are ready to scale whenever the need arises. 
+        Frontend assets will be served from AWS' Cloudfront CDN.
       </>
     ),
   },
   {
-    title: 'Powered by Zero',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
+    title: 'Secure',
+    Svg: require('../../static/img/icons/attr-secure.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Properly configured access-control to resources/security groups. 
+        Our practices are built on top of multiple security audits and 
+        penetration tests. Automatic certificate management using 
+        Let's Encrypt, database encryption, VPN support, and more means 
+        your traffic will always be encrypted. 
+      </>
+    ),
+  },
+  {
+    title: 'Modular',
+    Svg: require('../../static/img/icons/attr-modular.svg').default,
+    description: (
+      <>
+        Everything built by Zero is yours. After Zero generates your 
+        infrastructure, backend, and frontend, all the code is checked 
+        into your source control repositories and becomes the basis for 
+        your new system. You can customize as much as you like. We 
+        provide constant updates and new modules.
       </>
     ),
   },
@@ -37,13 +57,13 @@ const FeatureList = [
 
 function Feature({Svg, title, description}) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--6') + " feature"}>
       <div className="text--center">
         <Svg className={styles.featureSvg} alt={title} />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
-        <p>{description}</p>
+        <p className="description">{description}</p>
       </div>
     </div>
   );
@@ -51,13 +71,11 @@ function Feature({Svg, title, description}) {
 
 export default function HomepageFeatures() {
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
+    <section className={`${styles.features} featured-sections`}>
+      <div className="row">
+        {FeatureList.map((props, idx) => (
+          <Feature key={idx} {...props} />
+        ))}
       </div>
     </section>
   );

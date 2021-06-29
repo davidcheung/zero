@@ -1,8 +1,8 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Zero',
-  tagline: 'Zero sets up everything you need so you can immediately start building your product',
-  url: 'https://docs.zero-david.online',
+  tagline: 'Opinionated infrastructure to take you from idea to production on day one',
+  url: 'https://staging.getzero.dev',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -10,23 +10,32 @@ module.exports = {
   organizationName: 'commitdev',
   projectName: 'zero',
   themeConfig: {
+
     colorMode: {
       defaultMode: 'dark',
     },
     navbar: {
       logo: {
         alt: 'Zero Logo',
-        src: 'img/logo.png',
+        src: 'img/zero.svg',
       },
       items: [
         {
           to: '/docs/zero/about/overview',
           label: 'Docs',
+          className: 'header-docs-link header-logo-24',
           position: 'right'
         },
         {
+          href: 'https://slack.getzero.dev',
+          label: 'Slack',
+          className: 'header-slack-link header-logo-24',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/commitdev/zero',
-          className: 'header-github-link header-logo-32',
+          label: 'Github',
+          className: 'header-github-link header-logo-24',
           position: 'right',
         },
       ],
@@ -34,20 +43,28 @@ module.exports = {
     footer: {
       links: [
         {
-          title: 'Links',
           items: [
             {
-              label: 'Slack',
-              href: 'https://slack.getzero.dev'
+              to: '/docs/zero/about/overview',
+              label: 'Docs',
+              className: 'header-docs-link header-logo-24',
+              position: 'right'
             },
             {
-              label: 'Blog',
-              href: 'https://commit.dev/blog',
+              href: 'https://slack.getzero.dev',
+              label: 'Slack',
+              className: 'header-slack-link header-logo-24',
+              position: 'right',
+            },
+            {
+              href: 'https://github.com/commitdev/zero',
+              label: 'Github',
+              className: 'header-github-link header-logo-24',
+              position: 'right',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Commit.`,
     },
   },
   presets: [
@@ -58,7 +75,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           path: 'docs',
           routeBasePath: 'docs/zero/',
-          include: ['**/*.md'],
+          include: ['**/*.md', '**/*.mdx'],
           // editUrl: 'https://github.com/commitdev/zero/blob/main/doc-site/',
           editUrl: 'https://github.com/commitdev/zero/blob/doc-site/doc-site/',
         },
@@ -69,5 +86,12 @@ module.exports = {
       },
     ],
   ],
-  plugins: []
+  plugins: [
+    'docusaurus-plugin-sass'
+  ],
+  stylesheets: [
+      // "https://fonts.googleapis.com/css?family=Lato:400,900",
+      "https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Montserrat:wght@400;600;700;800&display=swap",
+      
+  ]
 };
