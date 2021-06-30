@@ -39,10 +39,10 @@ jobs:
           pwd
           ls -la
       - name: Upload build artifact to Github
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: build-artifact
-          path: /build
+          path: doc-site/build
 
   deploy:
     name: Deploy
