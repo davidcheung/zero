@@ -1,4 +1,5 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
+
 module.exports = {
   title: 'Zero',
   tagline: 'Opinionated infrastructure to take you from idea to production on day one',
