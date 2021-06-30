@@ -16,7 +16,7 @@ on:
 env:
   region: us-west-2
   s3_sync_path_to_exclude: docs/modules/*
-  s3_sync_path: /
+  s3_sync_path: ""
   BUILD_DOMAIN: staging.getzero.dev
 jobs:
   build:
@@ -70,7 +70,7 @@ jobs:
       shell: bash
       run: |
         cd build
-        aws s3 sync . ${{ secrets.DOC_SITE_BUCKET_NAME }}${{ env.s3_sync_path }} --exclude "${{ env.s3_sync_path_to_exclude }}" --delete
+        aws s3 sync . "s3://${{ secrets.DOC_SITE_BUCKET_NAME }}${{ env.s3_sync_path }}" --exclude "${{ env.s3_sync_path_to_exclude }}" --delete
     - name: Invalidate Cloudfront
       shell: bash
       run: |
