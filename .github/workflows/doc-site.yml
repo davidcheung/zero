@@ -27,16 +27,19 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
-      - name: Documentaiton site folder
-        run: cd doc-site
+      # - name: Documentaiton site folder
+      #   run: cd doc-site
       - name: Install Dependencies
+        working-directory: doc-site
         run: npm install
-      - run: npm run build
+      - name: Build website
+        working-directory: doc-site
+        run: npm run build
       - name: Upload build artifact to Github
         uses: actions/upload-artifact@v1
         with:
           name: build-artifact
-          path: /build
+          path: /doc-site/build
 
   deploy:
     name: Deploy
